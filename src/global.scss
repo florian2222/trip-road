@@ -24,3 +24,15 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.shareModal{
+    --background: transparent;
+    --border-radius: 2rem 2rem 0 0;
+    z-index: 0px;
+}
+
+.detailModal{
+    --background: transparent;
+    --border-radius: 2rem 2rem 0 0;
+    z-index: 0px;
+}

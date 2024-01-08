@@ -9,7 +9,9 @@
   },
   "files": [
     "src/test.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "src/app/CustomMapStyles.d.ts",
+    "src/app/Modules/Autosuggest.d.ts",
   ],
   "include": [
     "src/**/*.spec.ts",

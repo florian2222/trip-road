@@ -1,0 +1,77 @@
+<app-header title="Users" backButton="/acceuil">
+</app-header> 
+
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="doResh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
+<ion-card mode="ios" color="secondary" class="d-flex-center ion-text-center" *ngIf="!loading && trajets.length">
+  <h1>{{trajets.length}}</h1>
+  <p>Users </p>
+</ion-card>
+ 
+  <ion-list *ngIf="!loading">
+    <ion-item-sliding class="product-item" *ngFor="let T of items | async" >
+      <ion-item>
+        <ion-label>
+          <div class="name">
+             <ion-avatar>
+              <img *ngIf="user().image" [src]="T.image" alt=""/>
+
+              <ion-icon *ngIf="!user().image"  empty-icon name="person-circle-outline"></ion-icon>
+             </ion-avatar>
+          </div>
+        </ion-label>
+        <ion-label>
+          <div class="data">
+          {{T.name}} <br>
+          {{T.email}}
+        </div>
+        </ion-label>
+        <ion-label slot="end">
+          {{T.mat}}
+        </ion-label>
+        
+      </ion-item>
+      
+  
+      <ion-item-options >
+        <ion-item-option (click)="updateT(T)">
+          <ion-icon class="option-btn" name="thumbs-down-outline"></ion-icon>
+        </ion-item-option>
+
+        <ion-item-option color="danger" (click)="confirmdelete(T)">
+          <ion-icon class="option-btn" name="thumbs-up-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+
+  <!--====loading====== -->
+
+
+  <ion-list *ngIf="loading" >
+    
+        <ion-item class="product-item" *ngFor="let T of [1,1,1,1,1,1,1,1,1,1]">
+          <ion-avatar slot="start">
+            <ion-skeleton-text animated style="width: 100%; height: 100%;"></ion-skeleton-text>
+          </ion-avatar>
+        <ion-label>
+          <div><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></div>
+          <div><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></div>
+        </ion-label>
+        
+      </ion-item>
+  
+  </ion-list>
+
+  <!--====no trajets====== -->
+  <div *ngIf="!loading && !trajets.length" class="empty">
+    <ion-icon name="person-outline"></ion-icon>
+    <h3>No Journey</h3>
+  </div>
+ 
+</ion-content>

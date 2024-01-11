@@ -1,0 +1,83 @@
+<app-header [isModal]="true" [title]="trajet ? 'Edit trajet' : 'Add'"></app-header>
+<ion-content>
+
+    <form [formGroup]="form" class="auth-form" class="ion-pading ion-text-center">
+        
+        <!-- <ion-avatar *ngIf="form.value.image">
+            <img [src]="form.value.image" alt=""/>
+        </ion-avatar>
+        <ion-icon class="image-icon" *ngIf="!form.value.image"  name="image-outline"></ion-icon>
+
+        <br>
+        <ion-button (click)="takeImage()"  mode="ios" size="small" shape="round">
+            Click me
+        </ion-button>  -->
+        <app-custom-input 
+        autocomplete="name"
+        [control]="form.controls.name"
+        type="name"
+        label="From"
+        ></app-custom-input>
+        
+
+        <app-custom-input 
+        autocomplete="to"
+        [control]="form.controls.to"
+        type="name"
+        label="To"
+        ></app-custom-input>
+       
+
+        <app-custom-input 
+        autocomplete="heuredepart"
+        [control]="form.controls.heuredepart"
+        type="name"
+        label="From Hours"
+        ></app-custom-input>
+        
+
+        <app-custom-input 
+        autocomplete="duration"
+        [control]="form.controls.duration"
+        type="name"
+        label="Duration"
+        ></app-custom-input>
+        
+
+        <app-custom-input 
+        autocomplete="latitude"
+        [control]="form.controls.latitude"
+        type="number"
+        label="Latitude"
+        ></app-custom-input>
+       
+
+        <app-custom-input 
+        autocomplete="longitude"
+        [control]="form.controls.longitude"
+        type="number"
+        label="Longitude"
+        ></app-custom-input>
+        
+
+        <app-custom-input 
+        autocomplete="uidbus"
+        [control]="form.controls.uidbus"
+        type="name"
+        label="Bus Number"
+        ></app-custom-input>
+        
+
+        <app-custom-input 
+        autocomplete="color"
+        [control]="form.controls.color"
+        type="name"
+        label="Bus color">
+        ></app-custom-input>
+  
+       <ion-button  expand="block" mode="ios" class="ion-margin" (click)="createTraje()">
+        {{trajet ? 'Edit trajet' : 'Add'}}
+        <ion-icon slot="end" name="checkmark-circle-outline"></ion-icon>
+      </ion-button>
+      </form>
+</ion-content>

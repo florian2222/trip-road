@@ -1,0 +1,104 @@
+ion-content{
+    --background: rgba(181, 215, 255, 0.74);
+    backdrop-filter: blur(5px);
+    z-index: 0px; 
+    }
+
+
+ion-toolbar{
+    --background: rgba(216, 234, 255, 0.74);
+    backdrop-filter: blur(5px); 
+    ion-title{
+        display: flex;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            ion-icon{
+                transform: translateY(0.3rem);
+                -webkit-transform: translateY(0.3rem);
+                -moz-transform: translateY(0.3rem);
+                -ms-transform: translateY(0.3rem);
+                -o-transform: translateY(0.3rem);
+            }
+        }
+    }
+}
+
+ion-list{
+    background: transparent;
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    ion-icon{
+        color: black;
+        font-weight: bold;
+    }
+    ion-item{
+        --background: transparent;
+        color: black;
+        font-weight: bold;
+        font-size: 1.3rem;
+        --border-style: dashed:
+        --border-color: var(--ion-color-tertiary);
+        --padding-bottom: 0.3rem;
+        --padding-top: 0.3rem;
+        --padding-start: 0;
+        --padding-end: 0;
+        ion-toggle{
+            margin-right: -0.6rem;
+        }
+    }
+}
+
+ion-button{
+    --color: var(--macouleur);
+    font-size: 1.5rem;
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+}
+
+
+ion-modal#example-modal {
+    --background: var(--macouleur4);
+    --width: fit-content;
+    --min-width: 250px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+  
+  ion-modal#example-modal h1 {
+    margin: 20px 20px 10px 20px;
+  }
+  
+  ion-modal#example-modal ion-icon {
+    margin-right: 6px;
+  
+    width: 1.5rem;
+    height: 1.5rem;
+  
+    padding: 4px 0;
+  
+    color: black;
+  }
+  
+  ion-modal#example-modal .wrapper {
+
+    margin-bottom: 10px;
+    h1{
+       transform: translateX(3.5rem);
+       -webkit-transform: translateX(3.5rem);
+       -moz-transform: translateX(3.5rem);
+       -ms-transform: translateX(3.5rem);
+       -o-transform: translateX(3.5rem);
+       ion-avatar{
+            height: 7rem;
+            width: 7rem;
+       }
+    }
+    
+  }

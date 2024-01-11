@@ -1,0 +1,13 @@
+<ion-tabs #tabs (ionTabsDidChange)="setCurrenTab()">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home-std">
+      <ion-icon [name]="selectedTab == 'home' ? 'home' : 'home'"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="code-qr">
+      <ion-icon [name]="selectedTab == 'square' ? 'square' : 'square'"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="trajet-std">
+      <ion-icon [name]="selectedTab == 'bus' ? 'bus' : 'bus'"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

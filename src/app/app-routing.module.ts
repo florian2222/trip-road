@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NoAuthGuard } from './guards/no-auth.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
  
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
@@ -71,6 +73,26 @@ const routes: Routes = [
   {
     path: 'reset',
     loadChildren: () => import('./Authgard/reset/reset.module').then( m => m.ResetPageModule)
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./admin/auth/auth.module').then( m => m.AuthPageModule), canActivate:[NoAuthGuard]
+  },
+  {
+    path: 'acceuil',
+    loadChildren: () => import('./admin/main/acceuil/acceuil.module').then( m => m.AcceuilPageModule), canActivate:[AuthGuard]
+  },
+  {
+    path: 'profile', 
+    loadChildren: () => import('./admin/main/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'main',
+    loadChildren: () => import('./admin/main/main.module').then( m => m.MainPageModule)
+  },
+  {
+    path: 'detetudiant',
+    loadChildren: () => import('./admin/main/detetudiant/detetudiant.module').then( m => m.DetetudiantPageModule)
   },
   
 ];

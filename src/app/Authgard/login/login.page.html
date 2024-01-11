@@ -1,0 +1,45 @@
+<ion-content class="ion-padding">
+  <h1><img src="assets/icon/loginS.png"  alt=""/></h1>
+  <h3>Sign in to continue!</h3>
+
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-input formControlName="email" placeholder="email" class="input"></ion-input>
+      <ion-icon name="mail-outline" slot="end"></ion-icon>
+    </ion-item>
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <ion-text *ngIf="loginForm.get('email')?.hasError('required')">
+        Email is required!
+      </ion-text>
+    </div>
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <ion-text *ngIf="loginForm.get('email')?.hasError('pattern')">
+        Email shhould be valid
+      </ion-text>
+    </div>
+    <ion-item>
+      <ion-input formControlName="password" placeholder="password" class="input"></ion-input>
+      <ion-icon name="lock-closed-outline" slot="end"></ion-icon>
+    </ion-item>
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <ion-text *ngIf="loginForm.get('email')?.hasError('required')">
+        Password is required!
+      </ion-text>
+    </div>
+    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+      <ion-text *ngIf="loginForm.get('password')?.hasError('pattern')">
+        Password must atleast have
+        One Charecter
+        One Capital letter 
+        One number
+        Contain 8 digit
+      </ion-text>
+    </div>
+    
+    <a [routerLink]="['/reset']" class="forgot-password-link">Forgot Password?</a>
+
+    <ion-button label='Login' color="success"  (click)="login()">Sing In</ion-button>
+  </form>
+
+  <p class="footer-text">I'm a new user,<a (click)="detail()">Sign Up</a> </p>
+</ion-content>

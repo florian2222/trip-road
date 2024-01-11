@@ -1,0 +1,15 @@
+<ion-tabs #tabs (ionTabsDidChange)="setCurrenTab()">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="homechauffeur">
+      <ion-icon [name]="selectedTab == 'home' ? 'home' : 'home'"></ion-icon>
+    </ion-tab-button>
+
+    
+
+
+    <ion-tab-button tab="trajetchauffeur">
+      <ion-icon [name]="selectedTab == 'bus' ? 'bus' : 'bus'"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "x-line-ec70d": {
+      "hosting": {
+        "app": [
+          "x-line-ec70d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "x-line-ec70d"
+  }
+}

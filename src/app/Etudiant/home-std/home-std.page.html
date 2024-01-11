@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title mode="md" class="ion-no-padding">
+      <ion-label>
+        <h1>X-line</h1>
+      </ion-label>
+    </ion-title>
+    <ion-button fill="clear" (click)="setOpen(true)">
+      <img src="assets/icon/notifications.svg" alt="" /> 
+    </ion-button> 
+    <h2> Welcome Lynn</h2>
+    <ion-avatar slot="end" (click)="openShare()">
+        <img src="assets/lynn.jpg" alt=""/>
+    </ion-avatar>
+    <p>Home</p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="last"> 
+      <p>Your last Journey</p>
+  </div>
+  <div class="info">
+    <ion-title>Depart pour eyang</ion-title>
+    <div class="d1">
+      <h1>arriver dans <span>2h</span></h1>
+    </div>
+    <div class="d2">
+      <ion-button fill="clear"><ion-icon name="bus"></ion-icon></ion-button>
+      <h1>cliquer pour acceder aux details</h1>
+    </div>
+  </div>
+
+
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header class="ion-no-border">
+        <ion-toolbar>
+          <h1 class="title"  mode="md">Notification</h1>
+          <ion-button fill="clear" color="light" slot="start" (click)="setOpen(false)">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-toolbar>
+      </ion-header>
+     <ion-content [fullscreen]="true">
+     
+     </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

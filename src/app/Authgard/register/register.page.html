@@ -1,0 +1,60 @@
+<ion-content class="ion-padding">
+  <h1><img src="assets/icon/register.png"  alt=""/></h1>
+  <h3>Sign up to get started!</h3>
+
+  <form [formGroup]="form" novalidate>
+    <ion-item>
+      <ion-input formControlName="name" placeholder="Full Name" class="input"></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="form.controls.name.errors && form.controls.name.touched">
+      <div *ngIf="form.controls.name.errors?.['required']">Name is required!</div>
+      <div *ngIf="form.controls.name.errors?.['minlength']"> le nombre de lettre doit au moins etre de 4!!</div>
+    </div>
+
+    <ion-item>
+      <ion-input formControlName="email" placeholder="Email" class="input"></ion-input>
+    </ion-item>
+      <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+        <div *ngIf="form.controls.email.errors?.['required']">Email is required!</div>
+        <div *ngIf="form.controls.email.errors?.['email']"> Email should be valid</div>
+      </div>
+
+    <ion-item>
+      <ion-input formControlName="password" placeholder="Password" class="input"></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+      <div *ngIf="form.controls.password.errors?.['required']">
+        Password is required!
+      </div>
+    </div>
+
+    <ion-item>
+      <ion-input formControlName="mat" placeholder="Matricule" class="input"></ion-input>
+    </ion-item>
+    <div class="validators" *ngIf="form.controls.mat.errors && form.controls.mat.touched">
+      <div *ngIf="form.controls.mat.errors?.['required']">
+        Matriculation is required!
+      </div>
+    </div>
+
+    <ion-button (click)="submit()" color="success">Sign Up</ion-button>
+
+    <!-- <div class="line">
+      <div class="d"></div>
+      <h2>Or Sign In with</h2>
+      <div class="l"></div>
+    </div>
+
+    <ion-button> 
+      <ion-icon icon='logo-facebook' label='Connect with Facebook'></ion-icon>
+      Sign In with Facebook
+    </ion-button>
+
+    <ion-button color="medium">
+      <img src="assets/icon/google.svg"  alt=""/>
+      Sign In with Google
+    </ion-button> -->
+  </form>
+
+  <p class="footer-text">I'm already a member, <a routerLink="/login">Sign In</a></p>
+</ion-content>

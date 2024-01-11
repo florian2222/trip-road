@@ -1,0 +1,121 @@
+<ion-menu contentId="main-content">
+  <app-header title="Menu">
+  </app-header> 
+  <ion-content color="secondary" class="ion-text-center"> 
+    <ion-avatar>
+      <img *ngIf="user().image" [src]="user().image" alt=""/>
+      <ion-icon *ngIf="!user().image"  class="empty-icon" name="person-circle-outline"></ion-icon>
+    </ion-avatar>
+    <h4>{{user().name}}</h4>
+
+    <ion-menu-toggle autoHide="false"  color="secondary">
+      <ion-item  color="secondary" [routerLink]="['/detetudiant']" detail>
+        <ion-icon  name="man-outline" slot="start"></ion-icon>
+        <ion-label>Users</ion-label>
+      </ion-item>
+
+      
+      <ion-item  color="secondary" [routerLink]="['/profile']" detail> 
+        <ion-icon  name="person-outline" slot="start"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-content>
+
+  <ion-footer class="ion-no-border safe-p-bottom">
+    <ion-menu-toggle auto-hode="false"  color="secondary">
+      <ion-item line="none" (click)="signOut()" color="secondary">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        <ion-label>Log Out</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-footer>
+</ion-menu>
+
+
+
+<div class="ion-page" id="main-content">
+<app-header title="Home" [showmenu]="true">
+</app-header> 
+
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="doResh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
+<ion-card mode="ios" color="secondary" class="d-flex-center ion-text-center" *ngIf="!loading && trajets.length">
+  <h1>{{trajets.length}}</h1>
+  <p>Journey </p>
+</ion-card>
+ 
+  <ion-list *ngIf="!loading">
+    <ion-item-sliding class="product-item" *ngFor="let T of trajets" >
+      <ion-item>
+          <ion-icon name="bus" color="{{T.color}}"></ion-icon>
+          
+        <ion-label>
+          <div class="name">
+            From:{{T.name}} <br>
+            To:{{T.to}}</div>
+        </ion-label>
+        <ion-label>
+          <div class="data">
+          departure:{{T.heuredepart}} <br>
+          duration:{{T.duration}}
+        </div>
+        </ion-label>
+        <ion-label slot="end">
+          <h2>longitude:{{T.longitude}}</h2>
+          <p>latitude:{{T.latitude}}</p>
+        </ion-label>
+        
+      </ion-item>
+      
+  
+      <ion-item-options >
+        <ion-item-option (click)="updateT(T)">
+          <ion-icon class="option-btn"  name="create-outline"></ion-icon>
+        </ion-item-option>
+
+        <ion-item-option color="danger" (click)="confirmdelete(T)">
+          <ion-icon class="option-btn"  name="trash-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+
+  <!--====loading====== -->
+
+
+  <ion-list *ngIf="loading" >
+    
+        <ion-item class="product-item" *ngFor="let T of [1,1,1,1,1,1,1,1,1,1]">
+          <ion-avatar slot="start">
+            <ion-skeleton-text animated style="width: 100%; height: 100%;"></ion-skeleton-text>
+          </ion-avatar>
+        <ion-label>
+          <div><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></div>
+          <div><ion-skeleton-text animated style="width: 30%"></ion-skeleton-text></div>
+        </ion-label>
+        
+      </ion-item>
+  
+  </ion-list>
+
+  <!--====no trajets====== -->
+  <div *ngIf="!loading && !trajets.length" class="empty">
+    <ion-icon name="construct-outline"></ion-icon>
+    <h3>No Journey</h3>
+  </div>
+ 
+
+  <!--====New trajet Trajet====== -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="updateT()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+</div>

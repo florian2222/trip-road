@@ -1,0 +1,158 @@
+ion-toolbar{
+    --background: var(--macouleur3);
+    h1{
+        font-size: 1.5rem;
+        margin: 0.6rem;
+        font-weight: bold;
+        color: #545454;
+        transform: translateX(2rem);
+        -webkit-transform: translateX(2rem);
+        -moz-transform: translateX(2rem);
+        -ms-transform: translateX(2rem);
+        -o-transform: translateX(2rem);
+        span{
+            color: white;
+            font-size: 1.7rem;
+            padding: 1rem;
+        }
+}
+}
+
+ion-content{
+    --background: var(--macouleur5);
+    z-index: 0px;
+    .in{
+        display: flex;
+        color: black;
+        transform: translateY(-2rem);
+        -webkit-transform: translateY(-2rem);
+        -moz-transform: translateY(-2rem);
+        -ms-transform: translateY(-2rem);
+        -o-transform: translateY(-2rem);
+        .last{
+            position: relative;
+            text-align: center;
+            padding: 1rem;
+            height: 11vh;
+            width: 30vh;
+            background: linear-gradient(120.67deg, #7ba4eb 17.45%, rgb(70, 100, 184) 105.58%);
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            -ms-border-radius: 2rem;
+            -o-border-radius: 2rem;
+            margin: 6vh 1rem 0 1rem;
+            z-index: 0;
+            p{
+                size: 2rem;
+                transform: translateY(-1rem);
+                -webkit-transform: translateY(-1rem);
+                -moz-transform: translateY(-1rem);
+                -ms-transform: translateY(-1rem);
+                -o-transform: translateY(-1rem);
+           }
+        }
+    .rest{
+        text-align: center;
+        position: relative;
+        padding: 1rem;
+        height: 11vh;
+        width: 30vh;
+        background: linear-gradient(120.67deg, #7ba4eb 17.45%, rgb(70, 100, 184) 105.58%);
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+        margin: 6vh 1rem 0 1rem;
+        z-index: 0;
+        p{
+            size: 2rem;
+            transform: translateY(-1rem);
+            -webkit-transform: translateY(-1rem);
+            -moz-transform: translateY(-1rem);
+            -ms-transform: translateY(-1rem);
+            -o-transform: translateY(-1rem);
+       }
+    }
+    .p{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+.int{
+    display: flex;
+    margin: 1rem;
+    color: black;
+    ion-button{
+        color: black;
+        height: 5rem;
+        width: 12rem;
+        font-weight: bold;
+        --background: var(--macouleur6);
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+        transform: translateX(0.6rem);
+        -webkit-transform: translateX(0.6rem);
+        -moz-transform: translateX(0.6rem);
+        -ms-transform: translateX(0.6rem);
+        -o-transform: translateX(0.6rem);
+        p{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+            transform: translateX(-0.5rem);
+            -webkit-transform: translateX(-0.5rem);
+            -moz-transform: translateX(-0.5rem);
+            -ms-transform: translateX(-0.5rem);
+            -o-transform: translateX(-0.5rem);
+}
+}
+ion-label{
+    h1{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+    }
+    h2{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+    }
+}
+}
+}
+
+ion-tabs {
+    background: var(--macouleur4);
+    ion-tab-bar{
+        position: relative;
+        width: 90%;
+        transform: translate(-50%, -25%);
+        -webkit-transform: translate(-50%, -25%);
+        -moz-transform: translate(-50%, -25%);
+        -ms-transform: translate(-50%, -25%);
+        -o-transform: translate(-50%, -25%);
+        left: 50%;
+        border-radius: 1.5rem;
+        -webkit-border-radius: 1.5rem;
+        -moz-border-radius: 1.5rem;
+        -ms-border-radius: 1.5rem;
+        -o-border-radius: 1.5rem;
+        padding-bottom: 0;
+        border: 1px 0.5rem 1rem rgba(4, 2, 161, 0.88);
+        overflow: hidden;
+        box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.08);
+        height: 80px;
+        ion-tab-button{
+            // --background: var(--ion-color-ligth);
+            --color: var(--macouleur);
+            ion-icon{
+                font-size: 1.9rem;
+            }
+        }
+}
+}

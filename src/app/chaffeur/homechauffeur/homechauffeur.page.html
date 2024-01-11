@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title mode="md" class="ion-no-padding">
+      <ion-label>
+        <h1>X-line</h1>
+      </ion-label>
+    </ion-title>
+    <h2> Welcome Boris</h2>
+    <ion-avatar slot="end" (click)="openShare()">
+        <img src="assets/lynn.jpg" alt=""/>
+    </ion-avatar>
+    <p>Home</p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content   color="">
+  <ion-button expand="block" color="success" id="open-locationup">
+    <p>update my location <img src="assets/icon/localisation.png" alt=""> </p>
+  </ion-button>
+  <div class="info">
+    <div class="title">
+        <ion-icon name="bus"></ion-icon>
+        <h1>60 PLS</h1>
+    </div>
+    <div class="d1">
+      <h1><ion-icon name="person"></ion-icon> 42 pls restantes</h1>
+      <h1><ion-icon name="person"></ion-icon> 18 pls prises</h1>
+    </div>
+    <div class="elyp">
+      <ion-button fill="clear">
+        <img src="assets/icon/photo.svg" alt="">
+      </ion-button>
+     </div>
+  </div>
+  
+  <ion-modal
+    #modal
+    trigger="open-locationup"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0, 0.25, 0.5, 0.75]"
+    handleBehavior="cycle"
+  >
+    <ng-template>
+      <ion-content class="ion-padding">
+        <div class="modal">
+          <ion-input label="Update" value="Mec"></ion-input>
+        </div>
+        <ion-button color="success" (click)="modal.dismiss()">OK</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
